@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری کوینیگزگ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* تنظیمات کلی و فونت */
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #121212; /* پس‌زمینه تیره */
+            color: #eeeeee; /* متن روشن */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* هدر و عنوان اصلی */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #000000;
+        }
+
+        /* استایل لوگویی که اضافه کردید */
+        .logo {
+            width: 150px; /* اندازه لوگو */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+        }
+
+        /* کانتینر اصلی گالری */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* استایل هر کارت */
+        .car-card {
+            background-color: #1e1e1e; /* پس‌زمینه تیره‌تر برای کارت */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            overflow: hidden; /* برای اینکه گوشه‌های عکس هم گرد شود */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            /* انیمیشن: شروع با شفافیت صفر و کمی پایین‌تر */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlideUp 0.6s ease-out forwards;
+        }
+
+        /* افکت هاور (وقتی ماوس روی کارت می‌رود) */
+        .car-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* انیمیشن برای نمایش کارت‌ها */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* تاخیر در انیمیشن هر کارت برای زیبایی بیشتر */
+        .car-card:nth-child(1) { animation-delay: 0.1s; }
+        .car-card:nth-child(2) { animation-delay: 0.2s; }
+        .car-card:nth-child(3) { animation-delay: 0.3s; }
+        .car-card:nth-child(4) { animation-delay: 0.4s; }
+
+
+        .car-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* عکس‌ها را به زیبایی برش می‌زند */
+            display: block;
+            background-color: #333; /* رنگ پس‌زمینه تا زمان لود شدن عکس */
+        }
+
+        /* محتوای متنی داخل کارت */
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding-right: 0;
+            font-size: 0.9rem;
+        }
+
+        .card-content ul li {
+            padding-bottom: 5px;
+        }
+
+        .card-content ul li strong {
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://pngimg.com/uploads/koenigsegg/koenigsegg_PNG9.png" alt="لوگوی کوینیگزگ" class="logo">
+        <h1>گالری ابرخودروهای کوینیگزگ</h1>
+        <p>مجموعه‌ای از مهندسی شگفت‌انگیز سوئدی</p>
+    </header>
+
+    <main class="gallery-container">
+
+        <div class="car-card">
+            <img src="https://cdn.motor1.com/images/mgl/kO9Xp/s1/koenigsegg-jesko-absolut.jpg" alt="Koenigsegg Jesko Absolut">
+            <div class="card-content">
+                <h2>Jesko Absolut</h2>
+                <p>سریع‌ترین خودرویی که کوینیگزگ تا به حال ساخته است. هدف آن شکستن رکورد سرعت و عبور از مرز ۵۰۰ کیلومتر بر ساعت (۳۱۰ مایل بر ساعت) است.</p>
+                <ul>
+                    <li><strong>موتور:</strong> ۵.۰ لیتری V8 توئین توربو</li>
+                    <li><strong>قدرت:</strong> ۱۶۰۲ اسب بخار (با سوخت E85)</li>
+                    <li><strong>حداکثر سرعت:</strong> +۵۰۰ کیلومتر بر ساعت (تئوری)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://cdn.motor1.com/images/mgl/P6n6n/s1/koenigsegg-gemera.jpg" alt="Koenigsegg Gemera">
+            <div class="card-content">
+                <h2>Gemera</h2>
+                <p>اولین "مگا-جی‌تی" (Mega-GT) چهار نفره جهان. این خودرو ترکیبی از عملکرد یک ابرخودرو با راحتی یک خودروی خانوادگی است.</p>
+                <ul>
+                    <li><strong>موتور:</strong> هیبریدی (V8 یا ۳ سیلندر)</li>
+                    <li><strong>قدرت:</strong> تا ۲۳۰۰ اسب بخار</li>
+                    <li><strong>۰ تا ۱۰۰ کیلومتر:</strong> ۱.۹ ثانیه</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://cdn.motor1.com/images/mgl/pgr8j/s1/koenigsegg-regera.jpg" alt="Koenigsegg Regera">
+            <div class="card-content">
+                <h2>Regera</h2>
+                <p>یک ابرخودروی هیبریدی لوکس بدون گیربکس سنتی. این مدل از سیستم انتقال قدرت مستقیم (Direct Drive) کوینیگزگ استفاده می‌کند.</p>
+                <ul>
+                    <li><strong>موتور:</strong> هیبریدی V8 توئین توربو</li>
+                    <li><strong>قدرت:</strong> ۱۵۰۰ اسب بخار</li>
+                    <li><strong>۰ تا ۱۰۰ کیلومتر:</strong> ۲.۸ ثانیه</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="https://cdn.motor1.com/images/mgl/LpA1Lg/s1/koenigsegg-cc850.jpg" alt="Koenigsegg CC850">
+            <div class="card-content">
+                <h2>CC850</h2>
+                <p>ساخته شده به مناسبت ۵۰ سالگی کریستین ون کوینیگزگ. این خودرو ادای احترامی به مدل افسانه‌ای CC8S است و دارای گیربکس دستی/اتوماتیک منحصربفردی است.</p>
+                <ul>
+                    <li><strong>موتور:</strong> ۵.۰ لیتری V8 توئین توربو</li>
+                    <li><strong>قدرت:</strong> ۱۳۸۵ اسب بخار</li>
+                    <li><strong>ویژگی خاص:</strong> گیربکس Engage Shifter System</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
